@@ -9,12 +9,11 @@
     <h:outputLabel value="Hello, world"/><br></br>
 </f:view>
 
-<h:body>
-<h:dataTable value="#{csControl.recordStudent}" var="c">
-    <h:column>id :</h:column>
-    <h:column>#{c.id}</h:column>
-    <h:column>sec:</h:column>
+<h:dataTable value="#{csControl.compStudent}" var="c">
+    <h:column>Sec:</h:column>
     <h:column>#{c.sec}</h:column>
+    <h:column>id:</h:column>
+    <h:column>#{c.id}</h:column>
 </h:dataTable>
-</h:body>
+
 </html>

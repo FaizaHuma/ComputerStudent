@@ -13,9 +13,11 @@ import javax.faces.bean.ManagedBean;
 
 public class CompStudentControl{
 
-    public ArrayList<CompStudent>recordStudent()
+
+    public ArrayList<CompStudent>getCompStudent()
     {
-        ArrayList<CompStudent>arr=new ArrayList();
+        ArrayList<CompStudent>arr=new ArrayList<CompStudent>();
+
         try{
             Class.forName("oracle.jdbc.driver.OracleDriver");
             Connection con= DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl","Computer_lab","bup_lab");
@@ -24,22 +26,21 @@ public class CompStudentControl{
             while(rs.next())
             {
                 CompStudent cmp=new CompStudent();
-
                 cmp.setId(rs.getInt(1));
                 cmp.setSec(rs.getString(2));
                 arr.add(cmp);
 
+                }
+
             }
-
-
-        }
         catch (Exception e)
         {
 
         }
-        return  arr;
 
+        return  arr;
     }
+
 
 
     public String viewStudent()
